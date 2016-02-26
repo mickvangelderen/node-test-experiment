@@ -1,5 +1,5 @@
-function hello() {
-	return 'Hello World!'
-}
+import double from './double'
+import quadruple from './quadruple'
 
-export default hello
+export { double, quadruple }
+export default { double, quadruple }

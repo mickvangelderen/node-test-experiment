@@ -1,21 +1,12 @@
-# Usage guide
+# Tests
 
-This guide is for people who want to use NODE_PACKAGE_SKELETON_NAME. 
+This project is one possible solution to testing your code without a framework.
 
-Other guides:
-* [Development guide](development.md)
+## Idea
 
-## Install
+I got frustrated with test ordering. I wanted to use a part of my package in my tests, but I needed to ensure these parts were tested first to avoid error messages from the wrong places. 
 
-`npm install NODE_PACKAGE_SKELETON_NAME`
-
-## Usage
-
-```js
-import NODE_PACKAGE_SKELETON_NAME from 'NODE_PACKAGE_SKELETON_NAME'
-
-NODE_PACKAGE_SKELETON_USAGE
-```
+I also got frustrated with trying to think of descriptive names for my tests, the code should speak for itself. 
 
 ## Thanks
 

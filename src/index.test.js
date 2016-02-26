@@ -1,14 +1,7 @@
-/* eslint-env mocha */
+import './double.test'
+import './quadruple.test'
 import expect from 'must'
-import hello from './'
-import relativePath from '../test/relative-path'
+import { double, quadruple } from './'
 
-describe(relativePath(__filename), () => {
-	it('should export a function', () => {
-		expect(hello).to.be.a.function()
-	})
-
-	it('should return "Hello World!" when called', () => {
-		expect(hello()).to.equal("Hello World!")
-	})
-})
+expect(double).to.be.a.function()
+expect(quadruple).to.be.a.function()

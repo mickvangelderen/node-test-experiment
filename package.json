@@ -1,41 +1,44 @@
 {
   "author": {
-    "email": "NODE_PACKAGE_SKELETON_AUTHOR_EMAIL",
-    "name": "NODE_PACKAGE_SKELETON_AUTHOR_NAME",
-    "url": "NODE_PACKAGE_SKELETON_AUTHOR_URL"
+    "email": "mickvangelderen@gmail.com",
+    "name": "Mick van Gelderen",
+    "url": "https://github.com/mickvangelderen"
   },
   "dependencies": {},
-  "description": "NODE_PACKAGE_SKELETON_DESCRIPTION",
+  "description": "Testing with a framework is so old skool.",
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
-    "babel-eslint": "^5.0.0-beta10",
-    "babel-preset-es2015-node5": "^1.1.2",
+    "babel-preset-es2015-node4": "^2.0.3",
     "babel-register": "^6.5.2",
+    "bluebird": "^3.3.3",
     "eslint": "^2.0.0",
-    "eslint-plugin-babel": "^3.1.0",
-    "mocha": "^2.4.5",
+    "funko": "^0.3.0",
+    "istanbul": "^1.0.0-alpha.2",
     "must": "^0.13.1",
-    "semver": "^5.1.0"
+    "semver": "^5.1.0",
+    "source-map-support": "^0.4.0"
   },
   "engines": {
-    "node": "^5.6.0"
+    "node": "^4.0.0",
+    "npm": "^3.0.0"
   },
   "license": "MIT",
   "main": "lib/index.js",
-  "name": "NODE_PACKAGE_SKELETON_NAME",
-  "repository": "NODE_PACKAGE_SKELETON_REPOSITORY",
+  "name": "node-test-experiment",
+  "repository": "git@github.com:mickvangelderen/node-test-experiment",
   "scripts": {
     "build": "babel src --out-dir lib --ignore \"*.test.js\"",
     "check-node-version": "babel-node tools/check-node-version",
     "clean": "rm -rf lib",
+    "coverage": "babel-node node_modules/.bin/istanbul cover test/index.js",
     "lint": "eslint src test",
     "post-merge": "npm run check-node-version && npm update && npm dedupe && npm outdated --long",
     "pre-commit": "npm run sort-configuration-files -- --error-on-changes && npm test",
     "preversion": "npm run clean && npm run build",
     "setup": "cp tools/hooks/* .git/hooks/ && git config push.followTags true",
     "sort-configuration-files": "babel-node tools/sort-configuration-files",
-    "test": "npm run check-node-version && npm run lint && mocha \"{src,test}/**/*.test.js\""
+    "test": "npm run check-node-version && npm run lint && babel-node test/index.js"
   },
   "version": "0.1.0"
 }
